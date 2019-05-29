@@ -1,0 +1,194 @@
+/* Header */
+	.header {
+		padding: calc(var(--page-padding)/1.5) var(--page-padding);
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+		position: relative;
+	}
+
+	.header nav {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.header a {
+		color: var(--color-grey-dark);
+		text-decoration: none;
+		font-size: 1.25rem;
+		font-weight: 700;
+	}
+
+	.header__name {
+		font-size: 2rem;
+	}
+
+	.header__menu {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+	}
+
+
+	.header__menu-list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		margin: 0;
+	}
+
+	.header__menu-list li {
+		margin-left: 1rem;
+		margin-right: 1rem;
+		text-transform: uppercase;
+	}
+
+	.header__menu-list li:first-of-type {
+		margin-left: 0;
+	}
+
+	.header__menu-list li:last-of-type {
+		margin-right: 0;
+	}
+
+	.header__menu-item--active {
+		border-bottom: 2px solid var(--color-grey-dark);
+	}
+
+	@media (max-width: 700px) {
+		.header nav {
+			display: block;
+			text-align: center
+		}
+
+		.header__menu-list {
+			justify-content: center;
+			padding-left: 0;
+			margin-top: 1.5rem;
+		}
+	}
+
+/* Intro */
+	.intro {
+		display: flex;
+		flex-wrap: wrap;
+		background-color: var(--intro-backround-color);
+		padding: 0 var(--page-padding);	
+	}
+
+	.intro img {
+		max-width: 360px;
+		border-radius: 50%;
+	}
+
+	.intro__column {
+		padding: calc(var(--page-padding)/2) calc(var(--page-padding)/2) var(--page-padding);
+	}
+
+	.intro__column:first-of-type {
+		padding-left: 0;
+		order: 2;
+	}
+
+	.intro__column:last-of-type {
+		padding-right: 0;
+		order: 1;
+	}
+
+	.intro__text {
+		max-width: 400px;
+	}
+
+/* Main skills list */
+	.main-skills {
+		padding: calc(var(--page-padding)/2) var(--page-padding);	
+		background-color: var(--main-skills-backround-color);
+	}
+
+	.main-skills-list,
+	.main-skills h2 {
+		max-width: var(--limited-max-width);
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.main-skills-list {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	.main-skills-list__item {
+		background-color: var(--color-white);
+		padding: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.main-skills-list__heading {
+		margin-bottom: 0.5rem;
+	}
+
+	.main-skills-list__description {
+		margin-left: 0;	
+	}
+
+/* Resume */
+	.resume {
+		max-width: var(--limited-max-width);
+		margin: 0 auto;
+	}
+
+	.resume__list {
+		padding-left: 0;
+		margin: 0;
+	}
+
+	.resume__list .resume__list {
+		border: 2px solid var(--color-grey-light);
+		padding: 1.5rem 1rem;	
+	}
+
+	
+
+	.resume__list img {
+		border-radius: 50%;
+		margin-right: var(--logo-text-distance);
+		height: 50px;
+		width: 50px;
+	}
+
+	.resume__list h4 {
+	    background: var(--color-grey-light);
+	    padding: 1rem;
+	    margin-bottom: 0;
+	 }
+
+	.resume__list h3,
+	.resume__list h5 {
+		margin-top: 0;
+		margin-bottom: var(--margin-bottom-assignment-info);
+	}
+
+	.resume__list__employer {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 2rem;
+	}
+
+	.resume__list__assignment {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 1rem;
+	}
+
+	.resume__company-name {
+		display: block;
+		margin-bottom: var(--margin-bottom-assignment-info);
+	}
+
+	.resume__company-timespan {
+		color: var(--color-grey-medium);
+		display: block;	
+	}
+
+
+
+
+
