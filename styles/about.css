@@ -23,14 +23,12 @@
 
 	.header__menu {
 		display: flex;
-		flex-wrap: wrap;
 		justify-content: flex-end;
 	}
 
 
 	.header__menu-list {
 		display: flex;
-		flex-wrap: wrap;
 		justify-content: flex-end;
 		margin: 0;
 	}
@@ -69,7 +67,6 @@
 /* Intro */
 	.intro {
 		display: flex;
-		flex-wrap: wrap;
 		background-color: var(--intro-backround-color);
 		padding: 0 var(--page-padding);	
 	}
@@ -168,13 +165,11 @@
 
 	.resume__list__employer {
 		display: flex;
-		flex-wrap: wrap;
 		margin-bottom: 2rem;
 	}
 
 	.resume__list__assignment {
 		display: flex;
-		flex-wrap: wrap;
 		margin-bottom: 1rem;
 	}
 
