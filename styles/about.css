@@ -1,9 +1,9 @@
-@import url("_normalize.css");
-@import url("_fonts.css");
-@import url("_variables.css");
-@import url("_general.css");
-@import url("_header.css");
-@import url("_buttons.css");
+@import url("shared/normalize.css");
+@import url("shared/fonts.css");
+@import url("shared/variables.css");
+@import url("shared/general.css");
+@import url("shared/header.css");
+@import url("shared/buttons.css");
 
 
 :root {
