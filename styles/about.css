@@ -1,88 +1,62 @@
-/* Header */
-	.header {
-		padding: calc(var(--page-padding)/1.5) var(--page-padding);
-		box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-		position: relative;
-	}
-
-	.header nav {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	.header a {
-		color: var(--color-grey-dark);
-		text-decoration: none;
-		font-size: 1.25rem;
-		font-weight: 700;
-	}
-
-	.header__name {
-		font-size: 2rem;
-	}
-
-	.header__menu {
-		display: flex;
-		justify-content: flex-end;
-	}
+@import url("_normalize.css");
+@import url("_fonts.css");
+@import url("_variables.css");
+@import url("_general.css");
+@import url("_header.css");
+@import url("_buttons.css");
 
 
-	.header__menu-list {
-		display: flex;
-		justify-content: flex-end;
-		margin: 0;
-	}
+:root {
+	/* Section colors */
+		/* - Intro */
+		--about-intro-backround-color: var(--color-white);
+		--about-intro-text-color: var(--color-grey--dark);
+		
+		/* - Main skills */
+		--about-main-skills-background-color: var(--color-pink-medium);
+		--about-main-skills-text-color: var(--color-grey-dark);
 
-	.header__menu-list li {
-		margin-left: 1rem;
-		margin-right: 1rem;
-		text-transform: uppercase;
-	}
-
-	.header__menu-list li:first-of-type {
-		margin-left: 0;
-	}
-
-	.header__menu-list li:last-of-type {
-		margin-right: 0;
-	}
-
-	.header__menu-item--active {
-		border-bottom: 2px solid var(--color-grey-dark);
-	}
-
-	@media (max-width: 700px) {
-		.header nav {
-			display: block;
-			text-align: center
-		}
-
-		.header__menu-list {
-			justify-content: center;
-			padding-left: 0;
-			margin-top: 1.5rem;
-		}
-	}
+	/* Margins & paddings*/
+		--about-logo-text-distance: 1.7rem;
+		--about-margin-bottom-assignment-info: 0.3rem;
+}
 
 /* Intro */
 	.intro {
+		align-items: flex-end;
 		display: flex;
-		background-color: var(--intro-backround-color);
+		background-color: var(--about-intro-backround-color);
 		padding: 0 var(--page-padding);	
+	}
+	@media (max-width: 700px) {
+		.intro {
+			flex-wrap: wrap;
+		}
 	}
 
 	.intro img {
-		max-width: 360px;
-		border-radius: 50%;
+		display: block;	
+		max-width: 460px;
+	}
+	@media (max-width: 900px) {
+		.intro img {
+			max-width: 300px;
+		}
 	}
 
 	.intro__column {
-		padding: calc(var(--page-padding)/2) calc(var(--page-padding)/2) var(--page-padding);
+		flex-grow: 1;
+	}
+
+	.intro__column h1 {
+		margin-top: 0;
 	}
 
 	.intro__column:first-of-type {
 		padding-left: 0;
 		order: 2;
+		padding: var(--page-padding-half) var(--page-padding-half) var(--page-padding);
+		align-self: center;
 	}
 
 	.intro__column:last-of-type {
@@ -91,31 +65,58 @@
 	}
 
 	.intro__text {
+		margin: 1rem 0;
+	}
+	@media (min-width: 701px) {
 		max-width: 400px;
 	}
 
 /* Main skills list */
 	.main-skills {
-		padding: calc(var(--page-padding)/2) var(--page-padding);	
-		background-color: var(--main-skills-backround-color);
+		background-color: var(--about-main-skills-background-color);
+		color: var(--about-main-skills-text-color);
+		padding: var(--page-padding-half) var(--page-padding) var(--page-padding);	
+		text-align: center;
+	}
+
+	.main-skills__heading {
+		margin-bottom: 1rem;
 	}
 
 	.main-skills-list,
-	.main-skills h2 {
-		max-width: var(--limited-max-width);
+	.main-skills__heading {
 		margin-right: auto;
 		margin-left: auto;
 	}
 
 	.main-skills-list {
-		margin-top: 0;
+		display: flex;
 		margin-bottom: 0;
+		margin-top: 0;
+	}
+
+	@media (max-width: 700px) {
+		.main-skills-list {
+			flex-wrap: wrap;
+		}
+	}
+
+	.main-skills-list__icon {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
 	}
 
 	.main-skills-list__item {
-		background-color: var(--color-white);
 		padding: 1rem;
-		margin-bottom: 1rem;
+		margin: 0.5rem;
+	}
+
+	.main-skills-list__item:first-of-type {
+		margin-left: 0;
+	}
+
+	.main-skills-list__item:last-of-type {
+		margin-right: 0;
 	}
 
 	.main-skills-list__heading {
@@ -128,8 +129,14 @@
 
 /* Resume */
 	.resume {
-		max-width: var(--limited-max-width);
 		margin: 0 auto;
+		max-width: var(--limited-max-width);
+		padding: var(--page-padding-half) var(--page-padding);
+	}
+
+	.resume h2 {
+		margin-bottom: 2rem;
+		margin-left: calc(50px + var(--about-logo-text-distance)); /* Logos + space to title*/
 	}
 
 	.resume__list {
@@ -139,50 +146,89 @@
 
 	.resume__list .resume__list {
 		border: 2px solid var(--color-grey-light);
-		padding: 1.5rem 1rem;	
+		padding: var(--about-logo-text-distance);	
 	}
-
-	
 
 	.resume__list img {
 		border-radius: 50%;
-		margin-right: var(--logo-text-distance);
+		margin-right: var(--about-logo-text-distance);
+		margin-bottom: 1rem;
 		height: 50px;
 		width: 50px;
 	}
 
 	.resume__list h4 {
 	    background: var(--color-grey-light);
-	    padding: 1rem;
 	    margin-bottom: 0;
+	    padding: 1rem;
 	 }
 
 	.resume__list h3,
 	.resume__list h5 {
+		margin-bottom: var(--about-margin-bottom-assignment-info);
 		margin-top: 0;
-		margin-bottom: var(--margin-bottom-assignment-info);
+	}
+	@media (min-width: 701px) {
+		.resume__list h5 {
+			padding-right: 10rem;	
+		}
 	}
 
 	.resume__list__employer {
 		display: flex;
-		margin-bottom: 2rem;
+		margin-bottom: 4rem;
+	}
+	@media (max-width: 700px) {
+		.resume__list__employer {
+			flex-wrap: wrap;
+		}
+	}
+
+	.resume__list__employer > section > header,
+	.resume__list__employer > section > p {
+		margin-right: 1rem;
 	}
 
 	.resume__list__assignment {
 		display: flex;
-		margin-bottom: 1rem;
+		margin-bottom: 1.5rem;
+	}
+	@media (max-width: 700px) {
+		.resume__list__assignment {
+			flex-wrap: wrap;
+		}
+	}
+
+	.resume__list__assignment:last-of-type {
+		margin-bottom: 0;
+	}
+
+	.resume__list__employer header,
+	.resume__list__assignment header {
+		position: relative;
 	}
 
 	.resume__company-name {
 		display: block;
-		margin-bottom: var(--margin-bottom-assignment-info);
+		margin-bottom: var(--about-margin-bottom-assignment-info);
 	}
 
 	.resume__company-timespan {
-		color: var(--color-grey-medium);
-		display: block;	
+	    background-color: var(--color-grey-light);
+	    border-radius: 5px;
+	    display: inline-block;
+	    font-size: 0.8rem;
+	    line-height: 1rem;
+	    padding: 0.3rem 0.5rem;
+	    
 	}
-
+	@media (min-width: 701px) {
+		.resume__company-timespan {
+			position: absolute;
+		    right: 0;
+		    top: 0;
+		}
+	}
 
 
 

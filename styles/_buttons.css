@@ -1,0 +1,22 @@
+.button {
+	border-radius: 25px;
+	border: 2px solid transparent;
+	color: var(--color-grey-dark);
+	display: inline-block;
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 1.5px;
+	padding: 0.5rem 1rem;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+}
+.button--primary {
+	border-color: var(--color-grey-dark);
+	color: var(--color-grey-dark);
+}
+
+.button--primary:hover {
+	background: var(--color-grey-dark);
+	color: var(--color-white);
+}
